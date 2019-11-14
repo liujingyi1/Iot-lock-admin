@@ -1,0 +1,185 @@
+<link rel="stylesheet" href="css/chosen.css" />
+<link rel="stylesheet" href="css/bootstrap-editable.css" />
+<link rel="stylesheet" href="css/jquery.gritter.css" />
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div class="page-header">
+	<h1>人员信息录入 </h1>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-sm-3 center">
+		<span class="profile-picture">
+			<img class="img-responsive editable editable-click editable-empty" alt="Alex's Avatar" id="avatar" src="avatars/profile-pic.jpg" />
+		</span>
+
+		<div class="space space-4"></div>
+
+		<a href="#" class="btn btn-sm btn-block btn-success">
+			<i class="ace-icon fa fa-cloud-upload bigger-120"></i>
+			<span class="bigger-110">拍照</span>
+		</a>
+
+		<a href="#" class="btn btn-sm btn-block btn-primary">
+			<i class="ace-icon fa fa-cloud-download bigger-110"></i>
+			<span class="bigger-110">人脸特征值</span>
+		</a>
+	</div>
+	
+	<div class="col-xs-12 col-sm-9 ">
+		<form class="form-horizontal" role="form" th:action="@{notice/create}" method="post">
+			<input name="picUrl" type="hidden" id="picUrl"/>
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">姓名：</label>
+
+				<div class="col-sm-9">
+					<div class="pos-rel">
+						<input class="scrollable" autofocus="autofocus" type="text" name="name" required="required"/>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">性别：</label>
+
+				<div class="radio">
+					<label>
+						<input name="sex" type="radio" class="ace" value="0"/>
+						<span class="lbl"> 男</span>
+					</label>
+					<label>
+						<input name="sex" type="radio" class="ace" value="1" checked="checked"/>
+						<span class="lbl"> 女</span>
+					</label>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">年龄：</label>
+				<div class="col-sm-9">
+					<div class="pos-rel">
+						<input type="number" min="1" max="150" name="age" />
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group" id="idcard_group">
+				<label for="idcard" class="col-xs-12 col-sm-3 col-md-3 control-label no-padding-right">身份证号：</label>
+				<div class="col-xs-12 col-sm-3">
+					<span class="block input-icon input-icon-right">
+						<input type="text" id="idcard" name="idcard" class="col-xs-12">
+					</span>
+				</div>
+				<div class="help-block col-xs-12 col-sm-reset inline" id="idcard_warning" style="visibility:hidden;">请输入正确的身份证号.</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">电话：</label>
+				<div class="col-sm-3">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="ace-icon fa fa-phone"></i>
+						</span>
+						<input class="form-control input-mask-phone" type="text" name="phone" maxlength="15" />
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">住户类别：</label>
+
+				<div class="radio">
+					<label>
+						<input name="memeber_type" type="radio" class="ace" value="0" checked="checked"/>
+						<span class="lbl"> 户主</span>
+					</label>
+					<label>
+						<input name="memeber_type" type="radio" class="ace" value="1"/>
+						<span class="lbl"> 业主</span>
+					</label>
+					
+					<label>
+						<input name="memeber_type" type="radio" class="ace" value="2"/>
+						<span class="lbl"> 租户</span>
+					</label>
+					
+					<label>
+						<input name="memeber_type" type="radio" class="ace" value="3"/>
+						<span class="lbl"> 临时访客</span>
+					</label>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">园区：</label>
+
+				<div class="col-sm-5">
+					<div class="pos-rel">
+						<select class="chosen-select form-control" id="village" data-placeholder="请选择园区" required="required">
+						</select>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">楼栋：</label>
+
+				<div class="col-sm-5">
+					<div class="pos-rel">
+						<select class="chosen-select form-control" disabled="disabled" id="building" name="building" data-placeholder="请选择楼栋" required="required">
+						</select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">楼层：</label>
+
+				<div class="col-sm-5">
+					<div class="pos-rel">
+						<select class="chosen-select form-control" disabled="disabled" id="floor" name="floor" data-placeholder="请选择楼层" required="required">
+						</select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right">房间号：</label>
+
+				<div class="col-sm-5">
+					<div class="pos-rel">
+						<select class="chosen-select form-control" disabled="disabled" id="room" name="room" data-placeholder="请选择房间" required="required">
+						</select>
+					</div>
+				</div>
+			</div>
+
+			
+		</form>
+
+	</div>
+	
+	<div class="col-xs-12 col-sm-12 ">
+			<div class="hr hr-16 hr-dotted"></div>
+	</div>
+	
+	<div class="col-xs-12 col-sm-12 ">
+			<div class="form-group">
+				<div class="col-md-offset-5 col-md-9">
+					<button class="btn btn-info" type="button" id="submit">
+						<i class="ace-icon fa fa-check bigger-110"></i>
+						Submit
+					</button>
+					&nbsp; &nbsp; &nbsp;
+					<button class="btn" type="reset" id="reset">
+						<i class="ace-icon fa fa-undo bigger-110"></i>
+						Reset
+					</button>
+				</div>
+			</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="tjs/member-create.js"></script>
+</html>

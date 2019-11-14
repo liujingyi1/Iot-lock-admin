@@ -1,0 +1,14 @@
+spring: 
+  main: 
+    allow-bean-definition-overriding: true
+  cloud: 
+    config: 
+      name: rgkCloud-Iot-lock-admin
+      profile: dev
+      uri: 
+      - http://192.168.160.33:8763
+      label: master
+#      discovery:
+#        enabled: true
+#        service-id: micro-service-config
+

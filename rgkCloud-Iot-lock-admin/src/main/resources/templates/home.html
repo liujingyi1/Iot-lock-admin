@@ -1,0 +1,329 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" charset="UTF-8" />
+		<title>Home</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<script data-pace-options='{ "ajax": true, "document": true, "eventLag": false, "elements": false }' src="js/pace.js"></script>
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/font-awesome.css" />
+
+		<link rel="stylesheet" href="css/ace-fonts.css" />
+
+		<link rel="stylesheet" href="css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<script src="js/ace-extra.js"></script>
+
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							锐嘉科物业管理云平台
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="avatars/user.jpg" />
+								<!-- <span class="user-info">
+									<small th:inline="text"  th:text="'Welcom,'+${session.SPRING_SECURITY_CONTEXT.authentication.name}"></small>
+								</span> -->
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<!-- <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+
+								<li>
+									<a th:href="@{/logout}" href="#"> 
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul> -->
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar responsive">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				<div id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<!-- <i class="ace-icon fa fa-signal"></i> -->
+						</button>
+
+						<button class="btn btn-info">
+							<!-- <i class="ace-icon fa fa-pencil"></i> -->
+						</button>
+
+						<!-- #section:basics/sidebar.layout.shortcuts -->
+						<button class="btn btn-warning">
+							<!-- <i class="ace-icon fa fa-users"></i> -->
+						</button>
+
+						<button class="btn btn-danger">
+							<!-- <i class="ace-icon fa fa-cogs"></i> -->
+						</button>
+
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> 园区管理 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a data-url="page/village.html" href="#page/village.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									园区列表
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-home"></i>
+							<span class="menu-text"> 楼宇管理 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a data-url="page/building.html" href="#page/building.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									楼宇管理
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a data-url="page/floor.html" href="#page/floor.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									楼层信息管理
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a ddata-url="page/room.html" href="#page/room.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									户型信息管理
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a data-url="#" href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									发送通知
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a data-url="#" href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									通知模板管理
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+					<li >
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text"> 终端管理 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a data-url="page/devices.html" href="#page/devices.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									终端列表
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+					<li >
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text"> 卡管理 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a data-url="page/cards.html" href="#page/cards.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									卡列表
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-users"></i>
+							<span class="menu-text"> 人员管理 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a data-url="page/member.html" href="#page/member.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									住户信息管理
+								</a>
+								<b class="arrow"></b>
+							</li>
+							
+							<!--  
+							<li class="">
+								<a data-url="page/member-create.html" href="#page/member-create.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									住户资料审核
+								</a>
+								<b class="arrow"></b>
+							</li>
+							 -->
+							<li class="">
+								<a data-url="page/member-create.html" href="#page/member-create.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									人员信息录入
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+					
+				</ul>
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<div class="page-content">
+					<div id="page-content-area" class="page-content-area" data-ajax-content="true">
+							<!-- ajax content goes here -->
+					</div><!-- /.page-content-area -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.js"></script>
+
+		<!-- ace scripts -->
+		<script src="js/ace/elements.scroller.js"></script>
+		<script src="js/ace/elements.colorpicker.js"></script>
+		<script src="js/ace/elements.fileinput.js"></script>
+		<script src="js/ace/elements.typeahead.js"></script>
+		<script src="js/ace/elements.wysiwyg.js"></script>
+		<script src="js/ace/elements.spinner.js"></script>
+		<script src="js/ace/elements.treeview.js"></script>
+		<script src="js/ace/elements.wizard.js"></script>
+		<script src="js/ace/elements.aside.js"></script>
+		<script src="js/ace/ace.js"></script>
+		<script src="js/ace/ace.ajax-content.js"></script>
+		<script src="js/ace/ace.touch-drag.js"></script>
+		<script src="js/ace/ace.sidebar.js"></script>
+		<script src="js/ace/ace.sidebar-scroll-1.js"></script>
+		<script src="js/ace/ace.submenu-hover.js"></script>
+		<script src="js/ace/ace.widget-box.js"></script>
+		<script src="js/ace/ace.settings.js"></script>
+		<script src="js/ace/ace.settings-rtl.js"></script>
+		<script src="js/ace/ace.settings-skin.js"></script>
+		<script src="js/ace/ace.widget-on-reload.js"></script>
+		<script src="js/ace/ace.searchbox-autocomplete.js"></script>
+
+	</body>
+</html>
